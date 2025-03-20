@@ -4,7 +4,7 @@ import hostelsData from "./hostelsData";
 
 export default function Hostels() {
   return (
-    <div className=" bg-gray-800 h-screen">
+    <div className=" bg-gray-800 min-h-screen">
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold text-blue-600 text-center mb-6">🏠 Available Hostels</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -14,7 +14,6 @@ export default function Hostels() {
             <p className="">💰 Fee: {hostel.fee}</p>
             <p className="">📍 {hostel.address}</p>
 
-            {/* View Details Button */}
             <Link to={`/hostels/${hostel.id}`} className="block mt-3 text-center bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
               View Details
             </Link>
