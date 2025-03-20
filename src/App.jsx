@@ -7,6 +7,7 @@ import Signup from "./components/Signup";
 import Footer from "./components/Footer";
 import HostelDetails from "./components/HostelDetails";
 import FeePaymentForm from "./components/Fee";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   return (
@@ -16,10 +17,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/hostels" element={<Hostels />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/hostels/:id" element={<HostelDetails />} />
           <Route path="/fee-payment" element={<FeePaymentForm />} />
+
         </Routes>
       </div>
       <Footer />
