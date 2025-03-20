@@ -11,38 +11,35 @@ export default function HostelDetails() {
   const [applied, setApplied] = useState(false);
 
   if (!hostel) {
-    return <h2 className="text-center text-red-500">Hostel Not Found</h2>;
+    return <h2 className="text-center text-red-500 text-2xl font-semibold mt-10">Hostel Not Found</h2>;
   }
 
   return (
-    <div className="container mx-auto p-6">
-      {/* Back Button */}
-      <button onClick={() => navigate(-1)} className="flex items-center text-blue-500 hover:underline mb-4">
-        <ArrowLeft className="mr-2" /> Back
+    <div className="flex flex-col items-center  min-h-screen bg-gray-800 p-4">
+      {/* Back Button (Reduced spacing using mb-2) */}
+      <button 
+        onClick={() => navigate(-1)} 
+        className="flex items-center gap-2 border-2 border-blue-900 bg-blue-600 text-white px-5 py-2 rounded-md 
+                  font-semibold transition-all duration-300 ease-in-out hover:bg-blue-700 hover:shadow-lg 
+                  hover:-translate-x-1 active:scale-95 mb-2"
+      >
+        <ArrowLeft className="text-white" /> Back
       </button>
 
-      <div className="bg-white shadow-lg rounded-lg p-6 border border-gray-200">
-        <img src={hostel.image} alt={hostel.name} className="rounded-md w-full h-60 object-cover"/>
-        <h1 className="text-3xl font-bold text-gray-800 mt-4">{hostel.name}</h1>
+      {/* Hostel Details Card */}
+      <div className="bg-white shadow-2xl rounded-lg p-8 border border-gray-300 max-w-lg w-full 
+                      transform transition duration-500 hover:scale-105 hover:shadow-3xl">
+        <h1 className="text-4xl font-bold text-gray-800 text-center">{hostel.name}</h1>
+        
+        <div className="mt-4 space-y-3">
+          <p className="text-gray-700 flex items-center"><MapPin className="mr-2 text-blue-600"/> {hostel.address}</p>
+          <p className="text-gray-700 flex items-center"><Bed className="mr-2 text-blue-600"/> Total Seats: {hostel.totalSeats}</p>
+          <p className="text-gray-700 flex items-center"><Bed className="mr-2 text-blue-600"/> Empty Rooms: {hostel.emptyRooms}</p>
+          <p className="text-gray-700 flex items-center"><Utensils className="mr-2 text-blue-600"/> Food Menu: {hostel.foodMenu}</p>
+          <p className="text-gray-700 flex items-center"><Phone className="mr-2 text-blue-600"/> {hostel.phone}</p>
+          <p className="text-gray-700 flex items-center"><Mail className="mr-2 text-blue-600"/> {hostel.email}</p>
+        </div>
 
-        <p className="text-gray-600 flex items-center mt-2"><MapPin className="mr-2"/> {hostel.address}</p>
-        <p className="text-gray-600 flex items-center mt-2"><Bed className="mr-2"/> Total Seats: {hostel.totalSeats}</p>
-        <p className="text-gray-600 flex items-center mt-2"><Bed className="mr-2"/> Empty Rooms: {hostel.emptyRooms}</p>
-        <p className="text-gray-600 flex items-center mt-2"><Utensils className="mr-2"/> Food Menu: {hostel.foodMenu}</p>
-        <p className="text-gray-600 flex items-center mt-2"><Phone className="mr-2"/> {hostel.phone}</p>
-        <p className="text-gray-600 flex items-center mt-2"><Mail className="mr-2"/> {hostel.email}</p>
-
-        {/* Google Maps */}
-        <iframe
-          src={hostel.location}
-          title="Hostel Location"
-          width="100%"
-          height="250"
-          className="mt-4 rounded-md border"
-          allowFullScreen
-        ></iframe>
-
-        {/* Apply Button */}
         <div className="text-center mt-6">
           {applied ? (
             <div className="flex items-center justify-center bg-green-500 text-white px-4 py-2 rounded-md font-semibold">
@@ -51,7 +48,8 @@ export default function HostelDetails() {
           ) : (
             <button
               onClick={() => setApplied(true)}
-              className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-md font-semibold hover:from-blue-600 hover:to-blue-800 transition-all"
+              className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 rounded-lg font-semibold 
+                        hover:from-blue-600 hover:to-blue-800 transition-all duration-300 transform hover:scale-105"
             >
               Apply Now
             </button>
