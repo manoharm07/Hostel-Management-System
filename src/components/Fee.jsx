@@ -25,7 +25,8 @@ export default function FeePaymentForm() {
   };
 
   return (
-    <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
+    <div className="min-h-screen flex items-center justify-center bg-gray-800">
+    <div className="max-w-lg mx-auto mt-0 p-6 bg-white shadow-lg rounded-lg">
       <h2 className="text-2xl font-bold text-center text-blue-600 mb-4">🏦 Fee Payment Form</h2>
       
       {submitted ? (
@@ -108,5 +109,7 @@ export default function FeePaymentForm() {
         </form>
       )}
     </div>
+    </div>
+
   );
 }
