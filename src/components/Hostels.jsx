@@ -4,7 +4,8 @@ import hostelsData from "./hostelsData";
 
 export default function Hostels() {
   return (
-    <div className="container mx-auto p-6 bg-gray-800">
+    <div className=" bg-gray-800 h-screen">
+    <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold text-blue-600 text-center mb-6">🏠 Available Hostels</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {hostelsData.map((hostel) => (
@@ -20,6 +21,7 @@ export default function Hostels() {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }
